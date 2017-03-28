@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import NavCard from './NavCard';
-
+import NavCard from './NavCard'
 
 class App extends Component {
   render() {
-    return <div>
-    <NavCard />
-    </div>
+    return <h1></h1>
     }
 }
-
 export default App
