@@ -34,6 +34,9 @@ gem 'sendgrid-ruby'
 gem 'figaro'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'ransack'
+gem 'pg_search'
+gem 'rails_admin', '~> 1.1.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
