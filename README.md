@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## API notes
+***
+### Routes
+##### Getting all the categories
+>GET '/api/categories'
 
-Things you may want to cover:
++ This is the route to get a list of all the categories available
++ ID and Category Name will be output
 
-* Ruby version
+#### Getting all of the items within a category
+> GET '/api/categories/:category_id/inventories'
 
-* System dependencies
++ This will render a list of all items within a certain category given that a category ID is passed into it
 
-* Configuration
+#### Getting one item
+> GET '/api/categories/:category_id/inventories/:id'
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
++ For displaying a single item, this route will render all information about that item (Product name, SKU, Price, Available, Description, Picture)
