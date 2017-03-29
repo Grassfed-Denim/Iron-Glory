@@ -19,3 +19,7 @@
 > GET '/api/categories/:category_id/inventories/:id'
 
 + For displaying a single item, this route will render all information about that item (Product name, SKU, Price, Available, Description, Picture)
+
+#### Logging into admin
+ > GET '/admin'
+ + Users that are given admin privileges will use this route to login to the admin page and make changes.
