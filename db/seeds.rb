@@ -12,6 +12,6 @@ csv.each do |row|
   t.year  = row['Year']
   t.description = row['Description']
   t.category = Category.find_or_create_by!(name: row['Category'])
-  t.photo = File.open(Rails.root + "public/iron-glory-assets/iron-glory-products/#{row['SKU']}.png")
+  t.photo = File.open(Rails.root + "public/iron-glory-assets/iron-glory-products/#{row['SKU'].downcase}.png")
   t.save!
 end
