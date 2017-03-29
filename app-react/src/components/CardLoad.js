@@ -9,6 +9,11 @@ class CardLoad extends Component {
       foo: null,
     };
   }
+fetch('/users.json')  
+  .then(function(response) {
+    return response.json()
+  })
+
 
   componentDidMount() {
     fetch('/api/foo')
@@ -63,19 +68,28 @@ class Bar extends React.Component {
 
 export default CardLoad
 
-fetch('/users.json')  
-  .then(function(response) {
-    return response.json()
-  })
+// FETCH:
+// component
+// constructor
+// super
+// this.filterproducts =this.filterproducts.bind---when you make a new method
+// this.state = {
+//   products [],
+//   filter {}
+// }
+// componentwillmount(){
+// this.getProducts()
+// getProducts(){
+//  ex: ""fetch('/api/bar')
+//       .then(response => response.json())
+//       .then((response) => { this.setState({ response }); });""
 
-fetch('https://mywebsite.com/endpoint/', {  
-  method: 'POST',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    firstParam: 'yourValue',
-    secondParam: 'yourOtherValue',
-  })
-})
+//       render(){
+//         return <div>
+//         <Products products= {this.state.products}
+//         </div>
+//       }
+
+
+
+
