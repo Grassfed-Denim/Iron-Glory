@@ -22,3 +22,23 @@ right: 25px;
 bottom: 25px;
 
 }
+
+.is-parent{
+
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #FAF9F5;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+    min-height: 200px;
+    margin-bottom: 20px;
+    max-width: 200px;
+}
+
+.image {
+    top: 30px;
+    left:35px;
+}
