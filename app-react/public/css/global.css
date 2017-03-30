@@ -42,3 +42,13 @@ bottom: 25px;
     top: 30px;
     left:35px;
 }
+
+.is-primary {
+    background-color:rgba(192,192,192,0.3);
+
+}
+
+.is-warning {
+    background-color: deeppink;
+
+}
