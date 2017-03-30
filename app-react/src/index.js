@@ -15,6 +15,23 @@ import App from './App'
 // window.apiHost = 'localhost:3001/'
 
 
+// ReactDOM.render(
+
+//   <Router history={browserHistory}>
+//     <Route path="/" component={App}>
+//         <IndexRoute component={Home} />
+//         <Route path="category/:categoryId" component={Category} />
+//         <Route path="product/:productId" component={Product} />
+//         <Route path="checkout" component={Checkout} />
+//         <Route path="thankyou" component={ThankYou} />
+//     </Route>
+//   </Router>,
+
+//   document.getElementById('root')
+  
+
+
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')

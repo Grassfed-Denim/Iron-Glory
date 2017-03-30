@@ -29,7 +29,7 @@ body {
 }
 .NavCard {
     position: fixed;
-    width: 50vw;
+    width: 90vw;
 }
 .NavCard .column {
     background-color: lightskyblue;
@@ -45,6 +45,9 @@ body {
     height: 30px;
     width: 60px;
 }
+.categoryCard {
+    margin: 20px 10px 0px 0px;
+}
 .card {
     background: #ffffff;
     border: 1px solid #FAF9F5;
@@ -55,10 +58,8 @@ body {
     margin-bottom: 20px;
     max-width: 200px;
 }
-
 .image {
     top: 30px;
-    left:35px;
+    left: 35px;
 }
-
 
