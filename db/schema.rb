@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329202134) do
+ActiveRecord::Schema.define(version: 20170330185531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "shipping_id"
+    t.string   "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["shipping_id"], name: "index_carts_on_shipping_id", using: :btree
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +50,8 @@ ActiveRecord::Schema.define(version: 20170329202134) do
     t.integer  "price"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "cart_id"
+    t.index ["cart_id"], name: "index_orderings_on_cart_id", using: :btree
     t.index ["inventory_id"], name: "index_orderings_on_inventory_id", using: :btree
   end
 
@@ -76,7 +87,9 @@ ActiveRecord::Schema.define(version: 20170329202134) do
     t.boolean  "admin",           default: false
   end
 
+  add_foreign_key "carts", "shippings"
   add_foreign_key "inventories", "categories"
+  add_foreign_key "orderings", "carts"
   add_foreign_key "orderings", "inventories"
   add_foreign_key "orders", "orderings"
   add_foreign_key "orders", "shippings"
