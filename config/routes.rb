@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  scope :api do
+    resources :categories do
+      resources :inventories
+    end
+    resources :users
+  end
+
+  get 'api/login' => 'sessions#create'
+
 end
