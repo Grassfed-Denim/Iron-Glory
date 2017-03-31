@@ -54,12 +54,12 @@ body {
     min-height: 200px;
     margin-bottom: 20px;
     max-width: 200px;
-
 }
 .image {
     top: 30px;
     left: 35px;
 }
+
 
 
 .NavButton {
@@ -141,3 +141,47 @@ body {
     margin: 5px;
 }
 
+.cartButton {
+    border-radius: 4px;
+    background-color: rgba(255, 25, 117, 0.3);
+    font-family: 'Merriweather Sans', sans-serif;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    width: 170px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 20px;
+    margin: 50px;
+}
+
+.cartButton span {
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.cartButton span:after {
+    font-size: 16px;  
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.cartButton:hover span {
+    font-size: 16px;  
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    font-size: 16px;
+    opacity: 1;
+    right: 0;
+}

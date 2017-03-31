@@ -33,37 +33,38 @@ class App extends Component {
     }
   }
 
-  showPod() {
-    this.setState({patchOfDayHidden: false})
-  }
+    showPod() {
+      this.setState({patchOfDayHidden: false})
+    }
 
-  showMusic() {
-    this.setState({musicHidden: false})
-  }
+    showMusic() {
+      this.setState({musicHidden: false})
+    }
 
-  showMovies() {
-    this.setState({moviesHidden: false})
-  }
+    showMovies() {
+      this.setState({moviesHidden: false})
+    }
 
-  showParks() {
-    this.setState({parksHidden: false})
-  }
+    showParks() {
+      this.setState({parksHidden: false})
+    }
 
-  showFarming() {
-    this.setState({farmingHidden: false})
-  }
+    showFarming() {
+      this.setState({farmingHidden: false})
+    }
   // clearCard() {
   //   this.setState({musicHidden: true, moviesHidden: true, parksHidden: true, farmingHidden: true})
   // }
 
-   clearCard(x) {
+    clearCard(x) {
       x.classList.toggle("hidden");
-}
+    }
   
     getCategories() {
         fetch('/api/categories')
         .then(res => res.json())
-        .then(res => this.setState({categories: res}))
+        .then(res => console.log(res))
+        // .then(res => this.setState({categories: res}))
     }
 
     getProducts() {

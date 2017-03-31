@@ -5,6 +5,18 @@ class NavCard extends Component {
   render() {
     return <div className="columns NavCard">
     <a name="top" />
+    <div className="column is-vertical is-3">
+        <div className="column patchBack">
+            <div className="column is-parent is-vertical">
+                <div>
+                    <p className="podTitle">Patch Of The Day</p>
+                    <img src="/iron-glory-assets/iron-glory-products/igp25.png" />
+                    <hr/>
+                    <p className="podTitle">Ghostbusters</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div className="column is-3">
         <p className="field">
             <a onClick={this.props.showPod} className="button is-large NavButton"><span>Patch-of-the-Day</span></a>
@@ -22,19 +34,8 @@ class NavCard extends Component {
             <a href="#Farming" onClick={this.props.showFarming} className="button is-large NavButton"><span>Farming</span></a>
         </p>
         <p className="field">
-            <a className="button is-large NavButton"><span>Shopping Cart</span></a>
+            <a href="cart.html"className="button is-large NavButton"><span>Shopping Cart</span></a>
         </p>       
-    </div>
-    <div className="column is-vertical is-3">
-        <div className="column patchBack">
-            <div className="column is-parent is-vertical">
-                <div>
-                    <img src="/iron-glory-assets/iron-glory-products/igp25.png" />
-                    <hr/>
-                    <p className="podTitle">Ghostbusters</p>
-                </div>
-            </div>
-        </div>
     </div>
     </div>
     }
