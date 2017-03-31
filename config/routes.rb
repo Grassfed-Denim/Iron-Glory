@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :registrations
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   scope :api do
     resources :categories do

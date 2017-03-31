@@ -40,6 +40,7 @@ gem 'rails_admin', '~> 1.1.1'
 gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rails_admin', '~> 1.1.1'
+gem 'stripe'
 
 
 # Use jquery as the JavaScript library
