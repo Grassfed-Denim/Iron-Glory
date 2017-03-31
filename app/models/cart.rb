@@ -3,4 +3,6 @@ class Cart < ApplicationRecord
   belongs_to :order
   has_many :inventories, through: :orderings
   has_many :orderings
+  
+  has_secure_token
 end
