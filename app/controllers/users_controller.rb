@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
       # session id
+    else
+      render json: @user.errors.full_messages, status: 400
     end
   end
 
