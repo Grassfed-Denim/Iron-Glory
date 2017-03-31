@@ -23,11 +23,12 @@ import App from './App'
 //         <Route path="category/:categoryId" component={Category} />
 //         <Route path="product/:productId" component={Product} />
 //         <Route path="checkout" component={Checkout} />
-//         <Route path="thankyou" component={ThankYou} />
+//         <Route path="thankyou" component={ThankYou} /> 
 //     </Route>
 //   </Router>,
 
 //   document.getElementById('root')
+// )
   
 
 

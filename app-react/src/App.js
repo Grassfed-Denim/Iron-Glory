@@ -7,6 +7,7 @@ import Card from './Card'
 class App extends Component {
   constructor(props) {
     super(props)
+
     this.showPod = this.showPod.bind(this)
     this.showMusic = this.showMusic.bind(this)
     this.showMovies = this.showMovies.bind(this)
@@ -25,12 +26,16 @@ class App extends Component {
       parksHidden: true,
       farmingHidden: true,
       hidden: false,
-      categories: [],
+      category: [],
       originalProducts: [],
       products: [],
       product: {},
     }
   }
+
+  // componentWillMount () {
+  //   this.props.category
+  // }
 
   showPod() {
     this.setState({patchOfDayHidden: false})
@@ -56,19 +61,20 @@ class App extends Component {
   }
   
     getCategories() {
-        fetch('/api/categories')
+        fetch('/api/categories_id')
         .then(res => res.json())
+        // .then(response => console.log(response))
         .then(res => this.setState({categories: res}))
     }
 
-    getProducts() {
-        fetch('/api/categories/:category_id/inventories')
+    getProducts(categoryId) {
+        fetch('/api/categories/' + categoryId + '/inventories')
         .then(res => res.json())
         .then(res => this.setState({products: res, originalProducts: res}))
     }
 
-    getProduct(id) {
-        fetch('https://iron-glory.herokuapp.com/api/categories/:category_id/inventories/:id')
+    getProduct(categoryId, productId) {
+        fetch('https://iron-glory.herokuapp.com/api/categories/' + categoryId + '/inventories/' + productId)
         .then(res => res.json())
         .then(res => this.setState({product: res}))
     }
@@ -78,10 +84,10 @@ class App extends Component {
     <a name="top" />
     <NavCard showPod={this.showPod} showMusic={this.showMusic} showMovies={this.showMovies} showParks={this.showParks} showFarming={this.showFarming} />
     <a name="products" />
-    <Card hidden={this.state.musicHidden} title="Music/Bands"/>
-    <Card hidden={this.state.moviesHidden} title="Movies"/>
-    <Card hidden={this.state.parksHidden} title="Parks"/>
-    <Card hidden={this.state.farmingHidden} title="Farming"/>
+    <Card category={this.props.category_id} hidden={this.state.musicHidden} title="Music/Bands"/>
+    <Card category={this.props.category_id} hidden={this.state.moviesHidden} title="Movies"/>
+    <Card category={this.props.category_id} hidden={this.state.parksHidden} title="Parks"/>
+    <Card category={this.props.category_id} hidden={this.state.farmingHidden} title="Farming"/>
     </div> 
   }
 }
