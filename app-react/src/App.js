@@ -12,7 +12,8 @@ class App extends Component {
     this.showMovies = this.showMovies.bind(this)
     this.showParks = this.showParks.bind(this)
     this.showFarming = this.showFarming.bind(this)
-    this.hideCategory = this.hideCategory.bind(this)
+
+    this.clearCard = this.clearCard.bind(this)
 
     this.getCategories = this.getCategories.bind(this)
     this.getProducts = this.getProducts.bind(this)
@@ -24,7 +25,7 @@ class App extends Component {
       moviesHidden: true,
       parksHidden: true,
       farmingHidden: true,
-      hidden: false,
+      clearCard: false,
       categories: [],
       originalProducts: [],
       products: [],
@@ -32,33 +33,38 @@ class App extends Component {
     }
   }
 
-  showPod() {
-    this.setState({patchOfDayHidden: false})
-  }
+    showPod() {
+      this.setState({patchOfDayHidden: false})
+    }
 
-  showMusic() {
-    this.setState({musicHidden: false})
-  }
+    showMusic() {
+      this.setState({musicHidden: false})
+    }
 
-  showMovies() {
-    this.setState({moviesHidden: false})
-  }
+    showMovies() {
+      this.setState({moviesHidden: false})
+    }
 
-  showParks() {
-    this.setState({parksHidden: false})
-  }
+    showParks() {
+      this.setState({parksHidden: false})
+    }
 
-  showFarming() {
-    this.setState({farmingHidden: false})
-  }
-  hideCategory() {
-    this.setState({musicHidden: true, moviesHidden: true, parksHidden: true, farmingHidden: true})
-  }
+    showFarming() {
+      this.setState({farmingHidden: false})
+    }
+  // clearCard() {
+  //   this.setState({musicHidden: true, moviesHidden: true, parksHidden: true, farmingHidden: true})
+  // }
+
+    clearCard(x) {
+      x.classList.toggle("hidden");
+    }
   
     getCategories() {
         fetch('/api/categories')
         .then(res => res.json())
-        .then(res => this.setState({categories: res}))
+        .then(res => console.log(res))
+        // .then(res => this.setState({categories: res}))
     }
 
     getProducts() {
@@ -73,18 +79,31 @@ class App extends Component {
         .then(res => this.setState({product: res}))
     }
 
+
   render() {
     return <div>
-    <a name="top" />
-    <NavCard showPod={this.showPod} showMusic={this.showMusic} showMovies={this.showMovies} showParks={this.showParks} showFarming={this.showFarming} />
-    <a name="products" />
-    <Card hidden={this.state.musicHidden} title="Music/Bands"/>
-    <Card hidden={this.state.moviesHidden} title="Movies"/>
-    <Card hidden={this.state.parksHidden} title="Parks"/>
-    <Card hidden={this.state.farmingHidden} title="Farming"/>
-    </div> 
-  }
+              <div>
+              <a name="top" />
+              <NavCard showPod={this.showPod} showMusic={this.showMusic} showMovies={this.showMovies} showParks={this.showParks} showFarming={this.showFarming} />
+              </div>
+              <div>
+              <a name="Music" />
+              <Card hidden={this.state.musicHidden} title="Music/Bands"/>
+              </div> 
+              <div>
+              <a name="Movies" />
+              <Card hidden={this.state.moviesHidden} title="Movies"/>
+              </div>
+              <div>
+              <a name="Parks" />
+              <Card hidden={this.state.parksHidden} title="Parks"/>
+              </div>
+              <div>
+              <a name="Farming" />
+              <Card hidden={this.state.farmingHidden} title="Farming"/>
+              </div> 
+            </div>
+    }
 }
 
 export default App
-

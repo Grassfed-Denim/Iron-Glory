@@ -10,21 +10,15 @@ class Card extends Component {
     render() {
         // let products = this.props.products.filter(product => product.category_id === Number(this.props.params.categoryId))
 
+        // // Make that filtered list of products into UI components
         // products = products.map((product, key) => <div className="card has-pointer" key={key} onClick={() => browserHistory.push('/product/' + product.id)}>
-
-        // <div className="card">
-        //                 <figure className="image is-128x128">
-        //                     <img src="http://bulma.io/images/placeholders/128x128.png" alt="categoryPatch" />
-        //                 </figure> <br />
-        //                 <hr />
-        //                 {product.name}
-        //             </div>
-        //             </div>)
+        //     )
 
         return <div className={this.props.hidden ? "columns is-mobile hidden" : "columns is-mobile"}>
-            <div className="column is-7 is-offset-5 categoryCard">
-            <i className="fa fa-window-close-o fa-2x" aria-hidden="true" onClick={() => (this.props.hideCategory)}></i>
-                <article className="tile is-child notification is-danger">
+            <div className="column is-9 is-offset-3 categoryCard">
+            <i className="fa fa-window-close-o fa-2x" aria-hidden="true" ></i>
+            <a href="#top" className="button is-small toTheTop">Return to Top</a>
+                <article className="tile is-child notification itemscard">
                      <div className="card">
                         <figure className="image is-128x128">
                             <img src="http://bulma.io/images/placeholders/128x128.png" alt="categoryPatch" />
@@ -37,5 +31,6 @@ class Card extends Component {
         </div>
     }
 }
+
 
 export default Card
